@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-dashboard-rs
+  labels:
+    app: iitm-web-rs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: iitm-web-rs
+  template:
+    metadata:
+      labels:
+        app: iitm-web-rs
+    spec:
+      containers:
+      - name: web-dashboard
+        image: shourjya001/iitm-app:v1
+        ports:
+        - containerPort: 80

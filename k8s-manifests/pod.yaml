@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-dashboard-pod
+  labels:
+    app: iitm-web-standalone
+spec:
+  containers:
+  - name: web-dashboard
+    image: shourjya001/iitm-app:v1
+    ports:
+    - containerPort: 80
